@@ -27,15 +27,14 @@ html {
   width: 10vh;
   height: 5vh; 
   white-space: nowrap;
-  margin: auto;
   vertical-align: middle;
 }
 
 .searchBox input#search{
-  width: 20vh;
+  width: 30vh;
   height: 7vh;
   border: 1px;
-  font-size: 10pt;
+  font-size: 13pt;
   float: left;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;  
@@ -53,14 +52,15 @@ html {
 .searchBox button{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  /*border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;*/
   border: 20;
   border-color: white;
   color: white;
   background-color: transparent;
   height: 7vh;
-  width: 6vh;
+  width: 99.9%;
+  position: relative;
 
 .searchBox button{
   -webkit-border-top-right-radius: 5px;
