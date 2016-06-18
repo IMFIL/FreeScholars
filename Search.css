@@ -23,41 +23,23 @@ html {
   top: 300px;
 }
 
-.searchBox input#search{
-  width: 100px;
-  height: 50px;
-  border: 1px;
-  font-size: 10pt;
-  float: left;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  color: black;
- 
-  -webkit-transition: width .95s ease;
-  -moz-transition: width .95s ease;
-  -ms-transition: width .95s ease;
-  -o-transition: width .95s ease;
-  transition: width .95s ease;
-}
-
 .searchBox{
   width: 10vh;
   height: 5vh; 
   white-space: nowrap;
-  margin: auto;
   vertical-align: middle;
 }
 
 .searchBox input#search{
-  width: 10vh;
-  height: 4vh;
+  width: 30vh;
+  height: 7vh;
   border: 1px;
-  font-size: 10pt;
+  font-size: 13pt;
   float: left;
   border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;  color: black;
-  border: 1px solid rgba(100,100,100,0.5);
+  border-bottom-left-radius: 7px;  
+  color: black;
+  /*border: 1px solid rgba(100,100,100,0.5);*/
   opacity: 0.7;
     
   -webkit-transition: width .95s ease;
@@ -70,12 +52,15 @@ html {
 .searchBox button{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border: none;
+  /*border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;*/
+  border: 20;
+  border-color: white;
   color: white;
-  height: 4vh;
-  width: 4vh;
+  background-color: transparent;
+  height: 7vh;
+  width: 99.9%;
+  position: relative;
 
 .searchBox button{
   -webkit-border-top-right-radius: 5px;
