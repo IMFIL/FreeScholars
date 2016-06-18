@@ -38,7 +38,6 @@
   transition: width .95s ease;
 }
 
-<<<<<<< HEAD
 
 .searchBox{
   width: 10vh;
@@ -72,7 +71,7 @@
   border: none;
   height: 4vh;
   width: 9vh;
-=======
+
 .searchBox button{
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
@@ -84,7 +83,6 @@
   border: none;
   height: 50px;
   width: 50px;
->>>>>>> b13fe6e7b565cee3b4b9074a175226de9b4b0477
   color: white;
   opacity: 1;
   font-size: 10pt;
@@ -108,18 +106,16 @@
 
 .searchBox input#search:focus, .searchBox input#search:active{
   outline: 1px;
-<<<<<<< HEAD
   width: 10vh;
 }
  
 .searchBox:hover input#search{
 width: 15vh;
 }
-=======
+
   width: 300px;
 }
  
 .searchBox:hover input#search{
 width: 300px;
 }
->>>>>>> b13fe6e7b565cee3b4b9074a175226de9b4b0477
