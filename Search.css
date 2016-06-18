@@ -1,3 +1,11 @@
+html { 
+    background: url(background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+        } 
+
 .navigation-icon{
 
 }
@@ -7,18 +15,13 @@
 }
  
 .box {
-  margin: 100px auto;
+  margin: auto;
   width: 300px;
   height: 50px;
-}
-
-.searchBox{
-  width: 300px;
   vertical-align: middle;
-  white-space: nowrap;
   position: relative;
+  top: 300px;
 }
-
 
 .searchBox input#search{
   width: 100px;
@@ -32,20 +35,18 @@
   color: black;
  
   -webkit-transition: width .95s ease;
-  -moz-transition: width .995s ease;
+  -moz-transition: width .95s ease;
   -ms-transition: width .95s ease;
   -o-transition: width .95s ease;
   transition: width .95s ease;
 }
 
-
 .searchBox{
   width: 10vh;
-  height:5vh; 
+  height: 5vh; 
   white-space: nowrap;
-  position: relative;
-  top: 20vh;
-  left:45%;
+  margin: auto;
+  vertical-align: middle;
 }
 
 .searchBox input#search{
@@ -57,20 +58,24 @@
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;  color: black;
   border: 1px solid rgba(100,100,100,0.5);
+  opacity: 0.7;
     
   -webkit-transition: width .95s ease;
-  -moz-transition: width .995s ease;
+  -moz-transition: width .95s ease;
   -ms-transition: width .95s ease;
   -o-transition: width .95s ease;
   transition: width .95s ease;
 }
 
 .searchBox button{
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   border: none;
+  color: white;
   height: 4vh;
-  width: 9vh;
+  width: 4vh;
 
 .searchBox button{
   -webkit-border-top-right-radius: 5px;
@@ -96,12 +101,12 @@
 }
 
 .searchBox:hover button, .searchBox:active button, .searchBox:focus button{
-    outline: none;
-    opacity: 1;
-  }
+  outline: none;
+  opacity: 1;
+}
  
 .searchBox:hover button:hover{
-    background: black;
+  background: black;
 }
 
 .searchBox input#search:focus, .searchBox input#search:active{
@@ -110,12 +115,9 @@
 }
  
 .searchBox:hover input#search{
-width: 15vh;
-}
-
-  width: 300px;
+  width: 15vh;
 }
  
 .searchBox:hover input#search{
-width: 300px;
+  width: 300px;
 }
