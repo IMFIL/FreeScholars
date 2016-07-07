@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FreeScholars</title>
+    <meta charset="utf-8">
+    <style>
+        @import url("/../static/css/Index.css");
+    </style>
+    </head>
+    
+    <body>
+        <h2 class = "FreeScholarsHeader">FreeScholars <img src ="/../static/freescholars_notxt.png"/></h2>
+        
+        <div class = "containerBox">
+            <ul class="website_elements">
+                <li id="leftitem"><a href="#" class="navigation">POPULAR</a></li>
+                <li id="middleitem"><a href="#" class="navigation">SEARCH</a></li>
+                <li id="rightitem"><a href="#" class="navigation">CATEGORIES</a></li>
+            </ul>
+        </div> 
+        
+        <div class = "website_description">
+            <p>FreeScholars aims to give students with a college or university email an easy way to discover different<br/> services, software and benefits that they can get discounted or even for free just for being students.
+</p>
+        </div>
+        
+        <div class = "search_section" style="display: none">
+            <form method="GET" action="{{ url_for('search') }}" >
+            <input type="search" id="search" placeholder="Services..." name="search"/>
+            <button type="submit">
+                <i class="fa fa-search fa-lg"></i>
+            </button>
+              </form>
+        </div>
+
+    </body>
+    
+    <script type="text/javascript" src="/../static/js/jquery-2.1.1.min.js"></script>
+    <script src="/../static/js/Index.js"></script>
+</html>
