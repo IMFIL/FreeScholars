@@ -16,8 +16,8 @@
 	        
 	        <div class = "containerBox">
 	            <ul class="website_elements">
-	           		<li id="middleitem"><a href="#" class="navigation">SEARCH</a></li>
-	                <li id="leftitem"><a href="#" class="navigation">POPULAR</a></li>
+	           		<li id="leftitem"><a href="#" class="navigation">SEARCH</a></li>
+	                <li id="middleitem"><a href="#" class="navigation">POPULAR</a></li>
 	                <li id="rightitem"><a href="#" class="navigation">CATEGORIES</a></li>
 	            </ul>
 	        </div> 
@@ -25,24 +25,24 @@
 	        <div class = "website_description">
 	            <p>FreeScholars aims to give students with a college or university email an easy way to discover different<br/> services, software and benefits that they can get discounted or even for free just for being students.</p>
 	        </div>
-	    </section>
-       
+        </section>
+        
+        
         <section class='search'>
-			<nav class = "navigation-icon"></nav>
 	        <div class="box">
 	        	<div class="searchBox">
-	            	<form method="GET" action="{{ url_for('search') }}" >
-	            		<input type="search" id="search" placeholder="Services..." name="search"/>
-	            		<button type="submit">
+	            		<input type="search" id="searchInput" placeholder="search" name="search"/>
+	            		<button id="submitSearch">
 	                		<i class="fa fa-search fa-lg"></i>
 	            		</button>
-	                </form>
 	          	</div>
 	        </div>
+            <div class="search-box"></div>
 		</section>
-
+        
     </body>
     
     <script type="text/javascript" src="/../static/js/jquery-2.1.1.min.js"></script>
     <script src="/../static/js/Index.js"></script>
+    
 </html>

@@ -16,11 +16,11 @@ for div in divs:
 		h4.append(div.find("div", { "class" : "find" }).find("a")["href"].replace("/partners/","").replace("-"," "))
 		a.append(div.find("div", { "class" : "description"}).text.strip().replace("*",""))
 
-con = lite.connect('FreeScholarsCAdiscounts.db')
+con = lite.connect('FreeScholars.db')
 cur = con.cursor()    
 
 for i in range(0,len(h4)):
 	with con:
-		cur.execute("INSERT INTO Rebaits VALUES(?,?);",("".join(h4[i]),"".join(a[i])))
+		cur.execute("INSERT INTO FreeScholarsCAdiscounts VALUES(?,?);",("".join(h4[i]),"".join(a[i])))
 
 

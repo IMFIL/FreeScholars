@@ -1,52 +1,43 @@
-from __future__ import print_function
-from flask import Flask, render_template, request, url_for
+from __future__ import print_function                 
+from flask import Flask, render_template, request, url_for,Response
 import urllib2
 from bs4 import BeautifulSoup
+import sqlite3 as lite
 import logging
+import json
 from logging.handlers import RotatingFileHandler
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
 	return render_template('index.html')
 
-
 @app.route('/search', methods=["GET"])
 def search():
 	if request.args.get('search') is None:
-		return render_template('search.html')
+		return render_template('index.html')
+
 	else:
 		search = request.args.get('search')
-		page = urllib2.urlopen("https://www.studentbeans.com/student-discount/uk/results?query=" + search).read()
-		soup = BeautifulSoup(page,"html.parser")
-		soup.prettify()
-		divs = smydivs = soup.findAll("div", { "class" : "offer-info__header-info" })
-		h4 = []
-		p = []
-		hstring = []
-		pstring = []
-
-		for div in divs:
-			h4.append(div.find("h4"))
-			p.append(div.find("p"))
-
-		for H in h4:
-			hstring.append(H.string)
-
-
-		for P in p:
-			if P == None:
-				pstring.append("No Description")
-			else:
-				pstring.append(P.string)
-
-
-		app.logger.info(hstring)
-		app.logger.info(pstring)
-
-        return search
+		##check search, minimize the characters
+		##make sure the databases update every day, changing only the elements that have changes adding new ones and remove expired ones.
+		##research for more discounts
+		##make the search in the name not exactly the name
+		##switch data bases upon clicking UK or CA
 		
+		con = lite.connect('FreeScholars.db')
+        cur = con.cursor()   
+
+        with con:
+        	cur.execute("SELECT Name,Description FROM FreeScholarsCAdiscounts WHERE Name=?;",(search,))
+        	response = cur.fetchall()
+
+        return json.dumps(response)
+
+
+
 
 
 

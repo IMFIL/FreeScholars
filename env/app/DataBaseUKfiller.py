@@ -59,14 +59,14 @@ else:
 
 p
 
-con = lite.connect('FreeScholarsUKdiscounts.db')
+con = lite.connect('FreeScholars.db')
 cur = con.cursor()    
 
 if samelen:
 	for i in range(0,len(hstring)):
 		print(astring[i],hstring[i],pstring[i])
 		with con:
-			cur.execute("INSERT INTO Rebaits VALUES(?,?,?);",("".join(astring[i]),"".join(hstring[i]), "".join(pstring[i])))
+			cur.execute("INSERT INTO FreeScholarsUKdiscounts VALUES(?,?,?);",("".join(astring[i]),"".join(hstring[i]), "".join(pstring[i])))
 
 else:
 	print(len(hstring),len(astring),len(pstring))

@@ -15,7 +15,10 @@
     font-weight: bold;
 }
 
-
+body,html{
+    padding: 0px;
+    margin:0px;
+}
 
 
 .FreeScholarsHeader img{
@@ -117,7 +120,7 @@
   vertical-align: middle;
 }
 
-.searchBox input#search{
+.searchBox input#searchInput{
   width: 250px;
   height: 7vh;
   border: 1px;
@@ -146,13 +149,31 @@
   position: relative;
 }
 
-.search{
-    background-color: rgb(70,70,70);
-    min-height: 40vh;
+.top{
+    height: 60vh;
 }
 
-.top{
-    min-height: 60vh;
+.search{
+    background-color: rgb(70,70,70);
+    height: 40vh;
+}
+
+.search-box{
+    position: relative;
+    width:20vh;
+    height: auto;
+    background-color: aqua;
+    top: 22vh;
+    left: 45%;
+    
+}
+
+.search-result-template h3{
+    
+}
+
+.search-result-template p{
+    
 }
 
 .searchBox:hover button, .searchBox:active button, .searchBox:focus button{
