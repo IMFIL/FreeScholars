@@ -13,7 +13,7 @@ a = []
 
 for div in divs:
 	if div != None:
-		h4.append(div.find("div", { "class" : "find" }).find("a")["href"].replace("/partners/","").replace("-"," "))
+		h4.append(div.find("div", { "class" : "find" }).find("a")["href"].replace("/partners/","").replace("-"," ").lower())
 		a.append(div.find("div", { "class" : "description"}).text.strip().replace("*",""))
 
 con = lite.connect('FreeScholars.db')

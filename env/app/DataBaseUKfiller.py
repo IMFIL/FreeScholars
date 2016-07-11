@@ -27,14 +27,14 @@ if (len(h4) == len(p) and len(p) == len(a)):
 		hstring.append(h4[i].string)
 
 		if p[i] == None:
-			pstring.append("No Description")
+			pstring.append("")
 		else:
 			pstring.append(p[i].string)
 
 		if a[i] == None:
 			astring.append("unknown location")
 		else:
-			astring.append(a[i].string)
+			astring.append(a[i].string.lower())
 
 else:
 	samelen = False
@@ -45,7 +45,7 @@ else:
 
 	for P in p:
 		if P == None:
-			pstring.append("No Description")
+			pstring.append("")
 		else:
 			pstring.append(P.string)
 
@@ -53,7 +53,7 @@ else:
 		if A == None:
 			astring.append("unknown location")
 		else:
-			astring.append(A.string)
+			astring.append(A.string.lower())
 
 
 
@@ -66,7 +66,7 @@ if samelen:
 	for i in range(0,len(hstring)):
 		print(astring[i],hstring[i],pstring[i])
 		with con:
-			cur.execute("INSERT INTO FreeScholarsUKdiscounts VALUES(?,?,?);",("".join(astring[i]),"".join(hstring[i]), "".join(pstring[i])))
+			cur.execute("INSERT INTO FreeScholarsUKdiscounts VALUES(?,?);",("".join(astring[i]),"".join(hstring[i]) + ". " + "".join(pstring[i])))
 
 else:
 	print(len(hstring),len(astring),len(pstring))
