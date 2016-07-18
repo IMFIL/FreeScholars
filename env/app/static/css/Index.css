@@ -91,6 +91,10 @@ body,html{
     margin: 0;
 }
 
+.FreeScholarsHeader img{
+    padding-left: 1vh;
+}
+
 .website_elements{
     display: inline;
     text-decoration: none;    
@@ -140,8 +144,8 @@ body,html{
 }
 
 .searchBox input#searchInput{
-  width: 250px;
-  height: 7vh;
+  width: 220px;
+  height: 5vh;
   border: 1px;
   font-size: 13pt;
   float: left;
@@ -160,8 +164,8 @@ body,html{
   border-color: white;
   color: black;
   background-color: transparent;
-  height: 7vh;
-  width: 40%;
+  height: 5vh;
+  width: 35%;
   position: relative;
 }
 
@@ -174,12 +178,23 @@ body,html{
     height: 50vh;
 }
 
-.search-box{
+.search-area{
     position: relative;
     width:40vh;
     height: 20vh;
     top: 22vh;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box{
+    position: relative;
+    width:40vh;
+    height: 20vh;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-result-template{
@@ -198,13 +213,43 @@ body,html{
 }
 
 .search-result-template p{
-    font-family:Tahoma, Geneva, sans-serif; ;
+    font-family:Tahoma, Geneva, sans-serif;
     
 }
 
 .searchBox:hover button, .searchBox:active button, .searchBox:focus button{
   outline: none;
   opacity: 1;
+}
+
+.page-numbers{
+    position: relative;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.page-numbers div{
+    position: relative;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 4px;
+    background-color: rgba(220,220,220,0.9);
+    text-align: center;
+    margin-right: 3px;
+    
+}
+
+.page-numbers div span{
+    position: relative;
+    top:1.5vh;
+}
+
+.page-numbers-elements div span{
+    text-align: center;
 }
  
 .searchBox:hover button:hover{

@@ -19,7 +19,6 @@ def searchCA():
 	##make sure the databases update every day, changing only the elements that have changes adding new ones and remove expired ones.
 	##research for more discounts
 	##make the search in the name not exactly the name
-	##switch data bases upon clicking UK or CA
 
 	con = lite.connect('FreeScholars.db')
 	cur = con.cursor()   
@@ -27,6 +26,22 @@ def searchCA():
 	with con:
 		cur.execute("SELECT Name,Description FROM FreeScholarsCAdiscounts WHERE Name=?;",(search,))
 		response = cur.fetchall()
+
+	if len(response) == 0:
+		results = []
+		nameSearched = ''
+		for letter in search:
+			nameSearched += letter
+			with con:
+				cur.execute("SELECT Name,Description FROM FreeScholarsCAdiscounts WHERE Name like '%' + ? + '%' ;",(nameSearched,))
+				hits = cur.fetchall()
+
+			if len(hits) == 0:
+				break 	
+
+			results.append(hits)
+			#finish this
+
 
 	return json.dumps(response)
 
