@@ -1,7 +1,6 @@
 from __future__ import print_function                 
 from flask import Flask, render_template, request, url_for,Response
 import urllib2
-from bs4 import BeautifulSoup
 import sqlite3 as lite
 import json
 
@@ -19,7 +18,6 @@ def searchCA():
 	##make sure the databases update every day, changing only the elements that have changes adding new ones and remove expired ones.
 	##research for more discounts
 	##make the search in the name not exactly the name
-
 	con = lite.connect('FreeScholars.db')
 	cur = con.cursor()   
 
