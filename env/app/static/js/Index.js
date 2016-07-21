@@ -12,6 +12,7 @@ $("#rightitem").click(function(){
 let allowedSearch = true;
 let db = "CA"
 let searchHits = 0;
+let InitialSearchH = parseInt($(".search").css("height"));
 
 function search(){
     if(allowedSearch){
@@ -88,10 +89,8 @@ function search(){
                }
                else{
                    $( ".search" ).animate({  height: "52vh" }, 1100 );
-                   $("html, body").animate({ scrollTop: $(document).height() }, 1100).promise().then(function(){
                    $(".search-box-holder").append("<div class='search-box'> <div class='search-result-template'><h3>Nothing found</h3><p></p></div> </div>");
-                    allowedSearch = true;
-                   });
+                   allowedSearch = true;
                }
            });
         }
@@ -140,7 +139,7 @@ $("#CADB").click(function(){
     for(let i=1; i<=searchHits;i++){
         if (i == $(this).find("span").text()){
             $("#"+i+"page").show();
-            $( ".search" ).animate({height: 0.8*parseInt($(".search-box-holder").css("height"))  + parseInt($(".search-box-holder").css("height")) }, 1100);
+           $( ".search" ).animate({height: InitialSearchH + parseInt($(".search-area").css("height")) }, 1100);
         }
         else{
             $("#"+i+"page").hide();

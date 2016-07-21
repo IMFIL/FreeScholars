@@ -41,7 +41,7 @@ def searchCA():
 			#finish this
 
 
-	return json.dumps(response)
+	return json.dumps(results)
 
 
 @app.route('/searchUK', methods=["GET"])
