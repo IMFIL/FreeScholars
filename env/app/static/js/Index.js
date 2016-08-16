@@ -1,11 +1,20 @@
 
 $("#leftitem").click(function(){
+    $('html, body').animate({
+        scrollTop: $(".search").offset().top
+    }, 1000);
 });
 
 $("#middleitem").click(function(){
+    $('html, body').animate({
+        scrollTop: $(".popular").offset().top
+    }, 1000);
 });
 
 $("#rightitem").click(function(){
+    $('html, body').animate({
+        scrollTop: $(".categories").offset().top
+    }, 1000);
 });
 
 
@@ -35,21 +44,16 @@ function search(){
                if(data.length != 0){
                    let CurrentPage = 1;
                    let searchBoxes = [];                                      
-                   if (data.length >= 5){
-                       if(data.length%5 != 0){
-                        pages = Math.floor(data.length/5) + 1;
-                       }
-                       else{
-                           pages = data.length/5;
-                       }
-                   }
-                   else{
-                       pages = 1;
-                   }
+                   pages = Math.ceil(data.length/5)
                    searchHits = pages;
                    let width = 0;
                    for (let i = 1; i <= pages; i++){
-                       $(".page-numbers").append("<div class='pages'><span id=" +i +"span"+">"+ i +"<span></div>");
+                       $(".page-numbers").append("<div class='pages' id=" + i +"div" +"><span id=" +i +"span"+">"+ i +"<span></div>");
+                       
+                       if (i == 1){
+                           $("#1div").css("border","1px black solid");
+                       }
+                       
                        width += parseInt($(".pages").css("width"));
                    }
                    $(".page-numbers").css("width",width);
@@ -84,7 +88,7 @@ function search(){
                            $("#"+CurrentPage +"page").css("display",selector);
                        }
                 }
-                   $( ".search" ).animate({height: parseInt($(".search").css("height")) + parseInt($(".search-box-holder").css("height")) }, 1100);
+                   $( ".search" ).animate({height: InitialSearchH + parseInt($(".search-box-holder").css("height")) }, 1100);
                    allowedSearch = true;
                }
                else{
@@ -99,14 +103,24 @@ function search(){
 
 
 $("#submitSearch").click(function(){
-    search();
-    allowedSearch = false;
+    if($("#searchInput").val().toLocaleLowerCase().trim().length >= 3){
+        search();
+        allowedSearch = false;
+    }
+    else{
+        alert("Search needs to be at least 3 characters long")
+    }
 });
 
 $("#searchInput").keyup(function(event){
     if(event.keyCode == 13){
-        search();
-        allowedSearch = false;
+        if($("#searchInput").val().toLocaleLowerCase().trim().length >= 3){
+            search();
+            allowedSearch = false;
+        }
+        else{
+            alert("Search needs to be at least 3 characters long")
+        }
     }
 });
 
@@ -118,7 +132,7 @@ $('#searchInput').on('input', function(e) {
         $(".page-numbers").css("width",0);
         $(".search-box").css("height","0");
         $(".search-area").css("height","0");
-        $( ".search" ).animate({  height: "50vh" }, 1100 );
+        $( ".search" ).animate({  height: InitialSearchH }, 1100 );
     }
 });
 
@@ -126,22 +140,25 @@ $("#UKDB").click(function(){
     db = "UK";
     $("#UKDB").css("border-bottom","1px solid white");
     $("#CADB").css("border-bottom"," none");
+    Popular();
 });
 
 $("#CADB").click(function(){
     db = "CA";
     $("#CADB").css("border-bottom","1px solid white");
     $("#UKDB").css("border-bottom","");
-
+    Popular();
 });
 
  $('.page-numbers').on('click','div',function(){ 
     for(let i=1; i<=searchHits;i++){
         if (i == $(this).find("span").text()){
             $("#"+i+"page").show();
-           $( ".search" ).animate({height: InitialSearchH + parseInt($(".search-area").css("height")) }, 1100);
+            $(this).css("border", "1px black solid");
+           $( ".search" ).animate({height: InitialSearchH + parseInt($("#"+i+"page").css("height"))}, 1100);
         }
         else{
+            $("#" + i + "div").css("border", "none");
             $("#"+i+"page").hide();
         }
     }

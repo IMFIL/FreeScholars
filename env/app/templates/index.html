@@ -3,6 +3,7 @@
     <head>
         <title>FreeScholars</title>
         <link rel="stylesheet" href="/../static/css/font-awesome/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <style>
         @import url("/../static/css/Index.css");
@@ -10,43 +11,61 @@
     </head>
     
     <body>
+        <div class="ThreeContainer">                             
+            <section class='top'>
+                <div class="dataBases"><span id="UKDB" class="DBS">UK</span><span id="CADB" class="DBS">CA</span></div>
+                <h2 class = "FreeScholarsHeader">FreeScholars <img src ="/../static/freescholars_notxt.png"/></h2>
 
-    	<section class='top'>
-            <span id="UKDB" class="DBS">UK</span><span id="CADB" class="DBS">CA</span>
-	        <h2 class = "FreeScholarsHeader">FreeScholars <img src ="/../static/freescholars_notxt.png"/></h2>
-	        
-	        <div class = "containerBox">
-	            <ul class="website_elements">
-	           		<li id="leftitem"><a href="#" class="navigation">SEARCH</a></li>
-	                <li id="middleitem"><a href="#" class="navigation">POPULAR</a></li>
-	                <li id="rightitem"><a href="#" class="navigation">CATEGORIES</a></li>
-	            </ul>
-	        </div> 
-	        
-	        <div class = "website_description">
-	            <p>FreeScholars aims to give students with a college or university email an easy way to discover different<br/> services, software and benefits that they can get discounted or even for free just for being students.</p>
-	        </div>
-        </section>
-            
-        <section class='search'>
-            <h3 class = "searchHeader">Search <i class="fa fa-search fa-lg"></i></h3>
-	        <div class="box">
-	        	<div class="searchBox">
-	            		<input type="search" id="searchInput" placeholder="search" name="search"/>
-	            		<button id="submitSearch">
-	                		<i class="fa fa-search fa-lg"></i>
-	            		</button>
-	          	</div>
-	        </div>
-            <div class="search-area"><div class="search-box-holder"></div><div class="page-numbers"></div></div>
-		</section>
-        
-        <section class='popular'>
-	        <h3 class = "popularHeader">Popular <i class="fa fa-star fa-lg"></i></h3>
-	    </section>
+                <div class = "containerBox">
+                    <ul class="website_elements">
+                        <li id="leftitem"><a href="#" class="navigation">SEARCH</a></li>
+                        <li id="middleitem"><a href="#" class="navigation">POPULAR</a></li>
+                        <li id="rightitem"><a href="#" class="navigation">CATEGORIES</a></li>
+                    </ul>
+                </div> 
+
+                <div class = "website_description">
+                    <p>FreeScholars aims to give students with a college or university email an easy way to discover different services, software and benefits that they can get discounted or even for free just for being students.</p>
+                </div>
+            </section>
+
+            <section class='search'>
+                <h3 class = "searchHeader">Search <i class="fa fa-search fa-lg"></i></h3>
+                <div class="cardNotice" style="display:none"><p></p></div>
+                <!--^this div will used to indicate if this discount needs a special card to use, add indicator in the database to indicate if it needs it-->
+                <div class="box">
+                    <div class="searchBox">
+                            <input type="search" id="searchInput" placeholder="Search for a specific service" name="search"/>
+                            <button id="submitSearch">
+                                <i class="fa fa-search fa-lg"></i>
+                            </button>
+                    </div>
+                </div>
+                <div class="search-area"><div class="search-box-holder"></div><div class="page-numbers"></div></div>
+            </section>
+
+            <section class='popular'>
+                <h3 class = "popularHeader">Popular <i class="fa fa-star fa-lg"></i></h3>
+                <div class="popularBoxContainer">
+                    <div class="popularBox"><h1 class = "popularHeaderInside">Tech <i class="fa fa-desktop" aria-hidden="true"></i></h1><div class ="popularTextInside" id="ptiTech"><h4></h4><p></p></div></div>
+                    <div class="popularBox"><h1 class = "popularHeaderInside">Apparel &amp; Footwear <i class="fa fa-shopping-bag" aria-hidden="true"></i></h1><div class ="popularTextInside" id="ptiFashion"><h4></h4><p></p></div></div>
+                    <div class="popularBox"><h1 class = "popularHeaderInside">Lifestyle  <i class="fa fa-group" aria-hidden="true"></i></h1><div class ="popularTextInside" id="ptiLifestyle"><h4></h4><p></p></div></div>
+                    <div class="popularBox"><h1 class = "popularHeaderInside">Travel <i class="fa fa-plane" aria-hidden="true"></i></h1><div class ="popularTextInside" id="ptiTravel"><h4></h4><p></p></div></div>
+                    <div class="popularBox"><h1 class = "popularHeaderInside">Food &amp; Drinks <i class="fa fa-cutlery" aria-hidden="true"></i></h1><div class ="popularTextInside" id="ptiFood"><h4></h4><p></p></div></div>
+                </div>
+            </section>
+        </div>
 
 	    <section class='categories'>
 	        <h3 class = "categoriesHeader">Categories <i class="fa fa-tags fa-lg"></i></h3>
+
+            <div class="categoriesBoxContainer">
+                <div class="categoriesBox" id="TechCat"><h1 class = "categoriesHeaderInside"><i class="fa fa-desktop fa-3x" aria-hidden="true"></i></h1><div class ="categoriesTextInside"><h4>Tech</h4><p></p></div></div>
+                <div class="categoriesBox" id="FashionCat"><h1 class = "categoriesHeaderInside"><i class="fa fa-shopping-bag fa-3x" aria-hidden="true"></i></h1><div class ="categoriesTextInside"><h4>Apparel &amp; Footwear</h4><p></p></div></div>
+                <div class="categoriesBox" id="LifestyleCat"><h1 class = "categoriesHeaderInside"><i class="fa fa-group fa-3x" aria-hidden="true"></i></h1><div class ="categoriesTextInside"><h4>Lifestyle</h4><p></p></div></div>
+                <div class="categoriesBox" id="TravelCat"><h1 class = "categoriesHeaderInside"><i class="fa fa-plane fa-3x" aria-hidden="true"></i></h1><div class ="categoriesTextInside"><h4>Travel</h4><p></p></div></div>
+                <div class="categoriesBox" id="FoodCat"><h1 class = "categoriesHeaderInside"><i class="fa fa-cutlery fa-3x" aria-hidden="true"></i></h1><div class ="categoriesTextInside"><h4>Food &amp; Drinks</h4><p></p></div></div>
+            </div>
 	    </section>
 
 	    <section class='contact'>
@@ -60,5 +79,7 @@
     
     <script type="text/javascript" src="/../static/js/jquery-2.1.1.min.js"></script>
     <script src="/../static/js/Index.js"></script>
+    <script src="/../static/js/popular.js"></script>
+    <script src="/../static/js/categories.js"></script>
     
 </html>

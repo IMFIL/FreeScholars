@@ -43,7 +43,6 @@ body,html{
     -ms-transition: color 0.5s ease-in;
     transition: color 0.5s ease-in;
 
-
 }
 .navigation:visited{
     text-decoration: none;
@@ -59,20 +58,19 @@ body,html{
 }
 
 .containerBox{
-    position: relative;
-    right:3vh;
-    top:12vh;
+    margin: 1em auto;
     text-align: center;
 }
 
+.dataBases{
+    margin-top:1em;
+}
+
 .DBS{
-    position: relative;
-    top:1.5vh;
     margin-left:15px;
     font-family: MODERN;
     cursor:pointer;
     border-bottom:;
-
 }
 
 #CADB{
@@ -84,10 +82,9 @@ body,html{
     color: #e9e9e9;
     font-family: MODERN;
     text-align: center;
-    top:8vh;
-    position: relative;
     font-size: 400%;
-    margin: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0;
 }
 .searchHeader {
     color: #E9E9E9;
@@ -101,7 +98,6 @@ body,html{
     color: #E9E9E9;
     font-family: MODERN;
     text-align: left;
-    position: relative;
     margin: 0;
     padding: 10px;
 }
@@ -110,7 +106,6 @@ body,html{
     color: #E9E9E9;
     font-family: MODERN;
     text-align: left;
-    position: relative;
     margin: 0;
     padding: 10px;
 }
@@ -119,7 +114,6 @@ body,html{
     color: #E9E9E9;
     font-family: MODERN;
     text-align: left;
-    position: relative;
     margin: 0;
     padding: 10px;
 }
@@ -130,7 +124,8 @@ body,html{
 
 .website_elements{
     display: inline;
-    text-decoration: none;    
+    text-decoration: none;   
+    padding-left: 0;
 }
 
 .website_elements li{
@@ -150,10 +145,9 @@ body,html{
     background-color: rgba(250,250,250,0.6);
     padding-top: 3px;
     padding-bottom: 3px;
-    position: relative;
-    top: 18vh;
     text-align: center;
-    left: 20%;
+    margin: 0 auto;
+    margin-bottom: 3vh;
 }
 
 .website_description p{
@@ -161,70 +155,83 @@ body,html{
 }
 
 .box {
-  margin: auto;
-  width: 300px;
-  height: 50px;
-  vertical-align: middle;
-  position: relative;
-  top: 16.5vh;
+    height: 50px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .searchBox{
-  width: 20vh;
-  height: 5vh; 
-  white-space: nowrap;
-  vertical-align: middle;
+    height: 5vh; 
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 22vw;
+    display: flex;
 }
 
 .searchBox input#searchInput{
-  width: 220px;
-  height: 5vh;
-  border: 1px;
-  font-size: 13pt;
-  float: left;
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;  
-  color: black;
-  opacity: 0.7;
-    
+    width: 100%;
+    height: 5vh;
+    border: 1px;
+    font-size: 13pt;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;  
+    color: black;
+    opacity: 0.7;
+
 
 }
 
 .searchBox button{
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border: 20;
-  border-color: white;
-  color: white;
-  background-color: transparent;
-  height: 5vh;
-  width: 35%;
-  position: relative;
+    width: 5vw;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 20;
+    border-color: white;
+    color: white;
+    background-color: transparent;
+    height: 5vh;
+    position: relative;
+}
+
+.ThreeContainer{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .top{
-    height: 60vh;
+    flex-grow: 2; 
     background-color: #7ac1ae;
+    position: relative;
+    flex-shrink: 0;
 }
 
 .search{
+    flex-grow: 1;
     background-color: #9accc3;
-    height: 50vh;
+    height: 20vh;
+    justify-content: center;
 }
 
 .popular {
+    flex-grow: 2;
     height: 40vh;
     background-color: #7AC1AE;
 }
 
 .categories{
-    height: 40vh;
+    height: 33vh;
     background-color: #9ACCC3;
+    max-height: 300px;
+
 }
 
 .contact {
     height: 20vh;
     background-color: #36454f;
+    max-height: 170px;
 }
 
 .contactText {
@@ -244,13 +251,13 @@ body,html{
 .search-area{
     position: relative;
     width:40vh;
-    top: 22vh;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
 }
 
 .search-box{
+    top: 1vh;
     position: relative;
     width:40vh;
     margin: 0 auto;
@@ -262,11 +269,12 @@ body,html{
 .search-result-template{
     border: 2px solid rgba(30,30,30,0.7);
     position: relative;
-    background-color: rgba(220,220,220,0.9);
+    background-color: rgb(224,240,237);
     border-radius: 6px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 5px;
+    color: rgb(65,65,65);
 }
 
 .search-result-template h3{
@@ -301,7 +309,7 @@ body,html{
     width: 5vh;
     height: 5vh;
     border-radius: 4px;
-    background-color: rgba(220,220,220,0.9);
+    background-color: rgb(224,240,237);
     text-align: center;
     margin-right: 3px;
     display:table;
@@ -327,15 +335,117 @@ body,html{
   outline: 1px;
 }
 
+.popularBoxContainer{
+    display: flex;
+    position: relative;
+    
+}
 
+.popularBox{
+    position: relative;
+    flex-basis: 0;
+    flex: 1 1 0;
+    height: 32vh;
+    top: 1vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: rgba(50,50,50,0.5);
+    overflow: auto;
+}
 
+.popularHeaderInside{
+    font-family:Tahoma, Geneva, sans-serif;
+    color: white;
+    margin-left: 1vh;
+    font-size: 120%;
 
+}
+
+.popularTextInside{
+    position: relative;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    top: 1vh;
+}
+
+.popularTextInside h4{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(20,20,20);
+    font-size: 120%;
+}
+
+.popularTextInside p{
+    font-family: 'Raleway', sans-serif;
+    color: rgb(50,50,50);
+}
+
+.popularBox::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.popularBox::-webkit-scrollbar-thumb {
+    background-color: rgb(80,80,80);
+    border-radius: 30px;
+}
+
+.popularBox::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+
+.categoriesBoxContainer{
+    display: flex;
+    position: relative;
+}
 
 
 
             
+.categoriesBox{
+    position: relative;
+    flex-basis: 0;
+    flex: 1 1 0;
+    height: 23vh;
+    top: 1vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: rgba(50,50,50,0.5);
+    overflow: auto;
+    cursor:pointer;
+    max-height: 186px;
+    -webkit-box-shadow:0px 1px 1px rgb(50,50,50);
+    -moz-box-shadow:0px 1px 1px rgb(50,50,50);
+    box-shadow:0px 1px 1px rgb(50,50,50);
+}
 
+.categoriesBox i{
+    color: white;
+}
 
+.categoriesHeaderInside{
+    font-family:Tahoma, Geneva, sans-serif;
+    color: white;
+    margin-left: 1vh;
+    text-align: center;
+}
+
+.categoriesTextInside{
+    position: relative;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    top: 1vh;
+}
+
+.categoriesTextInside h4{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(20,20,20);
+    font-size: 120%;
+}
 
 
 
