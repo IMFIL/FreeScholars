@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/../static/css/font-awesome/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <style>
+            @import url("/../static/css/categories.css");
+        </style>
+    </head>
+    
+    <body>
+        <div class="headerDiv">
+                <i class="fa fa-arrow-left ICON" aria-hidden="true"></i>
+                <h1 class="CatHeader">{{header}}</h1>
+        </div>
+        <table class="MainTable">
+            {% for item in items %}
+                {% if HiddenRow() %}
+                    <TR class="RowContainer">
+                        <TD class="StandardCell"><div class="Container"><h4>{{test(item,0,0)}}</h4><p>{{test(item,0,1)}}</p></div></TD>
+                        <TD class="StandardCell"><div class="Container"><h4>{{test(item,1,0)}}</h4><p>{{test(item,1,1)}}</p></div></TD>
+                        <TD class="StandardCell"><div class="Container"><h4>{{test(item,2,0)}}</h4><p>{{test(item,2,1)}}</p></div></TD>
+                        <TD class="StandardCell"><div class="Container"><h4>{{test(item,3,0)}}</h4><p>{{test(item,3,1)}}</p></div></TD>
+                        <TD class="StandardCell"><div class="Container"><h4>{{test(item,4,0)}}</h4><p>{{test(item,4,1)}}</p></div></TD>
+                    </TR>
+                {% else %} 
+                        <TR class="RowContainerHidden">
+                            <TD class="StandardCell"><div class="Container"><h4>{{test(item,0,0)}}</h4><p>{{test(item,0,1)}}</p></div></TD>
+                            <TD class="StandardCell"><div class="Container"><h4>{{test(item,1,0)}}</h4><p>{{test(item,1,1)}}</p></div></TD>
+                            <TD class="StandardCell"><div class="Container"><h4>{{test(item,2,0)}}</h4><p>{{test(item,2,1)}}</p></div></TD>
+                            <TD class="StandardCell"><div class="Container"><h4>{{test(item,3,0)}}</h4><p>{{test(item,3,1)}}</p></div></TD>
+                            <TD class="StandardCell"><div class="Container"><h4>{{test(item,4,0)}}</h4><p>{{test(item,4,1)}}</p></div></TD>
+                        </TR>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <table class="page-numbers">
+            <TR>
+                {% for n in range(1,pages + 2) %}
+                    {% if n==1 %}
+                        <TD class='pages' style="border: 1px black solid"><span>{{ n }}</span></TD>
+                    {% else %}
+                        <TD class='pages'><span>{{ n }}</span></TD>
+                    {% endif %}
+                {% endfor %}
+            </TR>
+        </table>
+    </body>
+    
+    <script type="text/javascript" src="/../static/js/jquery-2.1.1.min.js"></script>
+    <script src="/../static/js/categoryTemplate.js"></script>
+    
+</html>
